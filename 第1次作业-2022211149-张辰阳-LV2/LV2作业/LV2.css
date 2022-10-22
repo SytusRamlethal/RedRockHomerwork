@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.position1 {
+    position: relative;
+    margin-left: 42%;
+    margin-top: 5%;
+}
+
+.box0 {
+    border: solid #8590a6;
+    width: 300px;
+    height: 100px;
+    border-style: hidden;
+}
+
+.box1 {
+    position: relative;
+    margin-left: 40.6%;
+    margin-top: 3%;
+    border: 1px solid #8590a6;
+    border-radius: 10px;
+    width: 300px;
+    height: 100px;
+}
+
+.circle {
+    border: 1px solid #54AFFF;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.circle0 {
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.position2 {
+    position: absolute;
+    margin-left: 8px;
+    margin-top: -12px;
+}
+
+.position3 {
+    position: absolute;
+    margin-left: 35px;
+    margin-top: -6px;
+    border-style: hidden;
+}
+
+.position4 {
+    position: relative;
+    margin-left: 8px;
+    margin-top: -20px;
+    margin-bottom: -5px;
+}
+
+.position5 {
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 0px;
+    border-style: hidden;
+    color: #8590a6;
+}
+
+.position6 {
+    position: relative;
+    margin-left: 5px;
+    border-style: hidden;
+    color: #8590a6;
+}
+
+input[type="checkbox"] {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    line-height: 18px;
+    margin-right: 10px;
+    position: relative;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #d9d9d9;
+}
+
+input[type="checkbox"]:checked::before {
+    content: "\2714";
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: 1px solid #8590a6;
+    color: red;
+    font-size: 15px;
+}
+
+.text1 {
+    font-size: 0.8em;
+    color: #8590a6;
+}
+
+.text2 {
+    text-decoration: none;
+    color: #54AFFF;
+}
+
+.text3 {
+    text-decoration: none;
+    font-size: 0.8em;
+    color: black;
+}
+
+.position7 {
+    position: absolute;
+    margin-left: 20%;
+    margin-top: 3px;
+}
+
+.position8 {
+    position: absolute;
+    margin-left: 42%;
+    margin-top: 2px;
+}
+
+.position9 {
+    position: absolute;
+    margin-left: 48%;
+    margin-top: 3px;
+}
+
+.submit {
+    position: relative;
+    margin-top: 10%;
+    width: 300px;
+    height: 40px;
+    background: red;
+    border-style: hidden;
+    border-radius: 8px;
+    color: #f8e6e6;
+    font-size: 1.1em;
+}
+
+.position10 {
+    position: absolute;
+    left: 138px;
+    top: 220px;
+    background: #fff;
+    color: black;
+}
+
+.position11 {
+    position: relative;
+    margin-top: 20%;
+}
+
+.position12 {
+    position: relative;
+    margin-left: 200%;
+}
+
+.position13 {
+    position: relative;
+    margin-left: 400%;
+}
+
+.position14 {
+    position: absolute;
+    top: 340px;
+    left: 80px;
+}
+
+a:hover {
+    color: red;
+}
