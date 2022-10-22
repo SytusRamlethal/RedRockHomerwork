@@ -1,0 +1,79 @@
+body {
+    margin: 0px;
+  }
+
+  .text1 {
+    font-weight: 800;
+  }
+
+  .box0 {
+    position: relative;
+    width: 65px;
+    height: 30px;
+    background-color: #54AFFF;
+    color: white;
+    line-height: 30px;
+    border-radius: 20px;
+  }
+
+  .box1 {
+    position: absolute;
+    top: 0;
+    left: 620px;
+    background-color: #54Afff;
+    height: 37px;
+  }
+
+  .position1 {
+    position: absolute;
+    right: 50%;
+    top: 30%;
+    margin-right: -300px;
+  }
+
+  .position2 {
+    position: absolute;
+    right: 50%;
+    top: 20%;
+    margin-right: -200px;
+  }
+
+  .position3 {
+    position: absolute;
+    right: 42%;
+    top: 50%;
+    border: 1px solid black;
+  }
+
+  .position4 {
+    position: absolute;
+    right: 42%;
+    top: 75%;
+    font-size: 1.2em;
+    font-weight: 600;
+  }
+
+  .position5 {
+    position: absolute;
+    right: 40%;
+    top: 79%;
+  }
+
+  input[type="submit"] {
+    position: absolute;
+    top: 0;
+    left: 609px;
+    border: 0;
+    height: 36px;
+    background-color: #54AFFF;
+    color: white;
+    font-size: large;
+  }
+
+  a {
+    color: black;
+  }
+
+  a:hover {
+    color: #54AFFF;
+  }
