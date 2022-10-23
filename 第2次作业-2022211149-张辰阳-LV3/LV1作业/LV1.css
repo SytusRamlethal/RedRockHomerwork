@@ -63,5 +63,4 @@ body {
 .box ul li:nth-child(1) {
     font-size: 20px;
 }
-
 /* 请让第二个和第三个li元素完成它们想要的变换！提示：大家可以查一下:nth-child伪类选择器*/
