@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>这是一个LV0作业</title>
+    <script>
+        "use strict";
+        const stu = {
+            name: 'MING',
+            hobby: ['play', 'run', 'sing'],
+            address: {
+                school: 'ChongQing',
+                home: 'HENAN'
+            },
+            title: ['student', { year: 2022 }],
+            skills: {
+                speak() {
+                    this.name = 'JACK';
+                }
+            }
+        }
+        const { name, h1 = 'paly', h2 = 'run', h3 = 'sing', HOME = 'HENAN', year = 2022 } = stu;
+        console.log(name, h1, h2, h3, HOME, year);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
