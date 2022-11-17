@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>这是一个Lv4作业</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgba(239, 247, 250);
+        }
+
+        ul {
+            padding: 0;
+            position: relative;
+            margin-top: 10px;
+            background-color: rgba(141, 237, 239, .3);
+            height: 300px;
+            width: 600px;
+            border-radius: 30px;
+        }
+
+        li {
+            position: relative;
+            margin-left: 20px;
+            top: 10px;
+            margin-top: 10px;
+            list-style-type: none;
+            width: 550px;
+            height: 25px;
+            text-indent: 10px;
+            border: 1px solid rgba(0, 0, 0, .3);
+            border-radius: 40px;
+        }
+
+        textarea {
+            text-indent: 10px;
+            resize: none;
+            border: 3px solid rgba(8, 132, 208, 0.259);
+            border-radius: 20px;
+            outline: none;
+        }
+
+        button {
+            border: 3px solid rgba(8, 132, 208, 0.259);
+            border-radius: 10px;
+            background-color: #ffffff;
+            color: black;
+            font-weight: 800;
+            letter-spacing: 5px;
+            text-indent: 5px;
+            position: absolute;
+            margin-top: 135px;
+        }
+
+        button:hover {
+            box-shadow: -10px 10px 5px rgba(8, 132, 208, 0.259);
+            transform: translateX(10px) translateY(-10px);
+            transition-duration: 1s;
+        }
+
+        a {
+            float: right;
+            color: black;
+            font-size: 0.8em;
+            line-height: 25px;
+            text-decoration: none;
+        }
+
+        span {
+            float: right;
+            color: transparent;
+        }
+
+        .box0 {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: black;
+            position: absolute;
+            top: 45px;
+            left: 223px;
+        }
+
+        .position0 {
+            position: absolute;
+            width: 11px;
+            height: 11px;
+            top: 45px;
+            left: 243px;
+        }
+
+        .box1 {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            position: absolute;
+            top: 65px;
+            left: 223px;
+        }
+
+        .position1 {
+            position: absolute;
+            width: 11px;
+            height: 11px;
+            top: 65px;
+            left: 243px;
+        }
+
+        .box2 {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: blue;
+            position: absolute;
+            top: 85px;
+            left: 223px;
+        }
+
+        .position2 {
+            position: absolute;
+            width: 11px;
+            height: 11px;
+            top: 85px;
+            left: 243px;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea name="" id="" cols="30" rows="10" placeholder="留言后调整字体颜色~"></textarea>
+    <div class="box0"></div>
+    <input type="checkbox" class="position0">
+    <div class="box1"></div>
+    <input type="checkbox" class="position1">
+    <div class="box2"></div>
+    <input type="checkbox" class="position2">
+    <button id="btn">留言</button>
+    <ul></ul>
+    <script>
+        let text = document.querySelector('textarea');
+        let btn = document.querySelector('button');
+        let ul = btn.nextElementSibling;
+        let color = document.querySelectorAll('input')
+
+        text.innerHTML = '---';
+        setTimeout(function () {
+            // IE
+            if (document.all) {
+                document.getElementById("btn").click();
+            }
+            // 其它浏览器
+            else {
+                var e = document.createEvent("MouseEvents");
+                e.initEvent("click", true, true);
+                document.getElementById("btn").dispatchEvent(e);
+            }
+        }, 0);
+        for (var i = 0; i < color.length; i++) {
+            color[i].setAttribute('deta-index', i); // 设置自定义属性
+        }
+        btn.onclick = function () {
+            if (text.value == '') alert('请输入内容！');
+            else {
+                let li = document.createElement('li');
+                ul.insertBefore(li, ul.children[0]);
+                li.innerHTML = text.value + '<span>0</span>' + "<a href='javascrip:;' id='a'>删除</a>";
+                text.value = '';
+
+                let textDelete = document.querySelectorAll('a');
+
+                for (var i = 0; i < textDelete.length; i++) {
+                    textDelete[i].onclick = function () {
+                        ul.removeChild(this.parentNode);
+                    }
+                }
+                //选择颜色
+                for (var i = 0; i < color.length; i++) {
+                    color[i].onclick = function () {
+                        for (var i = 0; i < color.length; i++) {
+                            color[i].checked = false; //排他思想
+                        }
+                        this.checked = true;
+                        if (this.getAttribute('deta-index') == 0) li.style.color = 'black';
+                        if (this.getAttribute('deta-index') == 1) li.style.color = 'red';
+                        if (this.getAttribute('deta-index') == 2) li.style.color = 'blue';
+                    }
+                }
+            }
+        }
+        setTimeout(function () {
+            // IE
+            if (document.all) {
+                document.getElementById("a").click();
+            }
+            // 其它浏览器
+            else {
+                var e = document.createEvent("MouseEvents");
+                e.initEvent("click", true, true);
+                document.getElementById("a").dispatchEvent(e);
+            }
+        }, 0);
+    </script>
+</body>
+
+</html>

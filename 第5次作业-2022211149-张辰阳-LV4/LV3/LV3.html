@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>这是一个Lv3作业</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgba(239, 247, 250);
+        }
+
+        ul {
+            padding: 0;
+            position: relative;
+            margin-top: 10px;
+            background-color: rgba(141, 237, 239, .3);
+            height: 300px;
+            width: 600px;
+            border-radius: 30px;
+        }
+
+        li {
+            position: relative;
+            margin-left: 20px;
+            top: 10px;
+            margin-top: 10px;
+            list-style-type: none;
+            width: 550px;
+            height: 25px;
+            text-indent: 10px;
+            border: 1px solid rgba(0, 0, 0, .3);
+            border-radius: 40px;
+        }
+
+        textarea {
+            text-indent: 8px;
+            resize: none;
+            border: 3px solid rgba(8, 132, 208, 0.259);
+            border-radius: 20px;
+            outline: none;
+        }
+
+        button {
+            border: 3px solid rgba(8, 132, 208, 0.259);
+            border-radius: 10px;
+            background-color: #ffffff;
+            color: black;
+            font-weight: 800;
+            letter-spacing: 5px;
+            text-indent: 5px;
+            position: absolute;
+            margin-top: 135px;
+        }
+
+        button:hover {
+            box-shadow: -10px 10px 5px rgba(8, 132, 208, 0.259);
+            transform: translateX(10px) translateY(-10px);
+            transition-duration: 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <button>留言</button>
+    <ul></ul>
+    <script>
+        let text = document.querySelector('textarea');
+        let btn = text.nextElementSibling;
+        let ul = btn.nextElementSibling;
+
+        btn.onclick = function () {
+            if (text.value == '') alert('请输入内容！');
+            else {
+                let li = document.createElement('li');
+                ul.insertBefore(li, ul.children[0]);
+                li.innerHTML = text.value;
+                text.value = '';
+            }
+        }
+    </script>
+</body>
+
+</html>
