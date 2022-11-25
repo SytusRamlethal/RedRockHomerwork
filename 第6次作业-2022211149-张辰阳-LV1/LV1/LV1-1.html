@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>这是一个LV1作业</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box1 {
+            background-color: aqua;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+
+        .box2 {
+            background-color: darkorange;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-top: 10px;
+        }
+
+        .box3 {
+            background-color: darkgrey;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-top: 10px;
+        }
+
+        .change1 {
+            animation: 3s linear infinite normal none running box1;
+            animation-iteration-count: 1;
+            animation-fill-mode:forwards;
+        }
+
+        .change2 {
+            animation: 3s linear infinite normal none running box2;
+            animation-iteration-count: 1;
+            animation-fill-mode:forwards;
+        }
+
+        .change3 {
+            animation: 3s linear infinite normal none running box3;
+            animation-iteration-count: 1;
+            animation-fill-mode:forwards;
+        }
+
+        @keyframes box1 {
+            100% {
+                margin-left: 40%;
+            }
+        }
+
+        @keyframes box2 {
+            100% {
+                margin-left: 40%;
+            }
+        }
+
+        @keyframes box3 {
+            100% {
+                margin-left: 40%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <script>
+        let box1 = document.querySelector('.box1');
+        let box2 = document.querySelector('.box2');
+        let box3 = document.querySelector('.box3');
+        setTimeout(() => {
+        box1.className = 'box1 change1';
+        }, 1000)
+        setTimeout(() => {
+        box2.className = 'box2 change2';
+        }, 4000)
+        setTimeout(() => {
+        box3.className = 'box3 change3';
+        }, 7000)
+    </script>
+</body>
+
+</html>

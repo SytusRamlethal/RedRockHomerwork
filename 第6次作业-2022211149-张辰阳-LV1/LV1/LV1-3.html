@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>这是一个LV1作业</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box1 {
+            background-color: aqua;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+
+        .box2 {
+            background-color: darkorange;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-top: 10px;
+        }
+
+        .box3 {
+            background-color: darkgrey;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-top: 10px;
+        }
+
+        .change1 {
+            animation: 3s linear infinite normal none running box1;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+        .change2 {
+            animation: 3s linear infinite normal none running box2;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+        .change3 {
+            animation: 3s linear infinite normal none running box3;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes box1 {
+            100% {
+                margin-left: 40%;
+            }
+        }
+
+        @keyframes box2 {
+            100% {
+                margin-left: 40%;
+            }
+        }
+
+        @keyframes box3 {
+            100% {
+                margin-left: 40%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <script>
+        let box1 = document.querySelector('.box1');
+        let box2 = document.querySelector('.box2');
+        let box3 = document.querySelector('.box3');
+        const step = (time, name) => {
+            return new Promise((resolve) => {
+                if (name == 'move1') {
+                    setTimeout(() => {
+                        resolve('box1 change1')
+                    }, time)
+                }
+                if (name == 'move2') {
+                    setTimeout(() => {
+                        resolve('box2 change2')
+                    }, time)
+                }
+                if (name == 'move3') {
+                    setTimeout(() => {
+                        resolve('box3 change3')
+                    }, time)
+                }
+            })
+        }
+
+        async function move() {
+            let move1 = await step(1000, 'move1');
+            box1.className = move1;
+            let move2 = await step(3000, 'move2');
+            box2.className = move2;
+            let move3 = await step(3000, 'move3');
+            box3.className = move3;
+        }
+        move().then(() => { });
+    </script>
+</body>
+
+</html>

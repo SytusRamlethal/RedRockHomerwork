@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>这是一个LV1作业</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box1 {
+            background-color: aqua;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            animation: 3s linear 1s infinite normal none running box1;
+            animation-iteration-count: 1;
+            animation-fill-mode:forwards;
+        }
+
+        .box2 {
+            background-color: darkorange;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-top: 10px;
+            animation: 3s linear 4s infinite normal none running box2;
+            animation-iteration-count: 1;
+            animation-fill-mode:forwards;
+        }
+
+        .box3 {
+            background-color: darkgrey;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-top: 10px;
+            animation: 3s linear 7s infinite normal none running box3;
+            animation-iteration-count: 1;
+            animation-fill-mode:forwards;
+        }
+
+        @keyframes box1 {
+            100% {
+                margin-left: 40%;
+            }
+        }
+
+        @keyframes box2 {
+            100% {
+                margin-left: 40%;
+            }
+        }
+
+        @keyframes box3 {
+            100% {
+                margin-left: 40%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+
+</html>
