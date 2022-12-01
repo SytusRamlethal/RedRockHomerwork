@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>这是一个LV1作业</title>
+</head>
+
+<body>
+    <button>发送请求</button>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/1.1.3/axios.js"></script>
+    <Script>
+        let params = null;
+        let btn = document.querySelector('button');
+        btn.addEventListener('click', () => {
+            const xhr = new XMLHttpRequest();
+            xhr.open("get", "https://taskapi.chovrio.club/poetry?title=帝京篇十首", true);
+            // xhr.setRequestHeader("", "");// 设置请求头
+            xhr.send(params);//发送请求，可携带参数
+            xhr.onreadystatechange = function result() {
+                // 返回存有 XMLHttpRequest 的状态。
+                // 从 0 到 4 发生变化。0 未连接 1 打开连接 2 发送请求 3 交互 4 完成交互
+                if (xhr.readyState == 4) {
+                    if (xhr.status == 200) {//返回状态码
+                        params = xhr.responseText;
+                        console.log(params);
+                    }
+                }
+            }
+        })
+/*         const btn = document.querySelector('button');
+                btn.addEventListener('click', async () => {
+                    const res = fetch('https://taskapi.chovrio.club/poetry/1', {
+                        method: 'get'
+                    })
+                    const data = await res.json();
+                    console.log(data);
+                }) */
+    </Script>
+</body>
+
+</html>
